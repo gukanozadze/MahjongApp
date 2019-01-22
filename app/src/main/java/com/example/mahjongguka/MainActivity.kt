@@ -37,7 +37,6 @@ class MainActivity : AppCompatActivity() {
     fun clicked(view: View){
         when(view.id) {
             R.id.imageView_1 -> {
-
                 imageView_1.setImageResource(R.mipmap.mahjong_icon_1)
                 opened_buttons.add(imageView_1)
                 imageView_1.contentDescription = "mahjong_icon_1"
