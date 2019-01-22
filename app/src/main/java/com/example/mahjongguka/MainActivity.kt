@@ -1,16 +1,11 @@
-package com.example.mahjongnika
+package com.example.mahjongguka
 
-import android.graphics.Color
-import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
 import android.widget.ImageView
-import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
-import android.content.Intent
-import android.util.Log
 
 
 class MainActivity : AppCompatActivity() {
@@ -142,37 +137,25 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun checkEqual(buttons: ArrayList<ImageView>){
-        // Vamowmeb tu ori sxvadasxva buttonia daklikuli da ara 1 an 0
         if (opened_buttons.size != 1 && opened_buttons.size != 0){
 
-            // Tu Ertnairia
             if (buttons[1].contentDescription == buttons[0].contentDescription){
 
-                // Vxdit Buttonebs unclickables tu ertnairia
                 buttons[0].isClickable=false
                 buttons[1].isClickable=false
 
-                // Vagdeb arraydan moqmed buttonebs
-                Log.d("GUKABEFORE", "$opened_buttons")
-                opened_buttons = arrayListOf<ImageView>()
-                Log.d("GUKA", "$opened_buttons")
+                opened_buttons = arrayListOf()
 
-
-            // Tu araa ertnairi
             }else{
                 Handler().postDelayed(
                     {
                         buttons[0].contentDescription = "unopened"
                         buttons[1].contentDescription = "unopened"
 
-                        // Surats vukeneb kitxvis nishans
                         buttons[0].setImageResource(R.mipmap.question_mark_icon)
                         buttons[1].setImageResource(R.mipmap.question_mark_icon)
 
-                        // Vagdeb arraydan moqmed buttonebs
-                        Log.d("GUKABEFORE", "$opened_buttons")
-                        opened_buttons = arrayListOf<ImageView>()
-                        Log.d("GUKA", "$opened_buttons")
+                        opened_buttons = arrayListOf()
                     },
                     400 // value in milliseconds
                 )

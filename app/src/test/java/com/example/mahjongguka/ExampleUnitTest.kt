@@ -1,4 +1,4 @@
-package com.example.mahjongnika
+package com.example.mahjongguka
 
 import org.junit.Test
 
